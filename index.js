@@ -14,28 +14,28 @@ app.listen(port, () => {
 });
 
 //const staff = require('./routes/staff');
-//const customer = require('./routes/customers.js');
-//const product = require('./routes/products.js');
+const customers = require('./routes/customers.js');
+const products = require('./routes/products.js');
 //const transaction = require('./routes/transactions.js');
 const categories = require('./routes/categories.js');
-//const discount = require('./routes/discounts.js');
-//const location = require('./routes/locations.js');
-//const role = require('./routes/roles.js');
-//const subscription = require('./routes/subscriptions.js');
-//const subscriptionType = require('./routes/subscriptionTypes.js');
-//const terminal = require('./routes/terminals.js');
+const discounts = require('./routes/discounts.js');
+const locations = require('./routes/locations.js');
+//const roles = require('./routes/roles.js');
+//const subscriptions = require('./routes/subscriptions.js');
+//const subscriptionTypes = require('./routes/subscriptionTypes.js');
+//const terminals = require('./routes/terminals.js');
 //const transactionStatus = require('./routes/transactionStatus.js');
-//const transactionType = require('./routes/transactionTypes.js');
+//const transactionTypes = require('./routes/transactionTypes.js');
 
 
 
 //app.use('/api/staff', staff);
-//app.use('/api/customers', customers);
-//app.use('/api/products', products);
+app.use('/api/customers', customers);
+app.use('/api/products', products);
 //app.use('/api/transactions', transactions);
 app.use('/api/categories', categories);
-//app.use('/api/discounts', discounts);
-//app.use('/api/locations', locations);
+app.use('/api/discounts', discounts);
+app.use('/api/locations', locations);
 //app.use('/api/roles', roles);
 //app.use('/api/subscriptions', subscriptions);
 //app.use('/api/subscriptionTypes', subscriptionTypes);

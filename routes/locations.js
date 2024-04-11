@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const transactionController = require('../controllers/transaction');
+const locationController = require('../controllers/location');
 const { auth } = require('../middleware/auth');
 
-router.get('/', auth, transactionController.getAllTransactions);
-router.get('/:id', auth, transactionController.getTransactionById);
-router.post('/', auth, transactionController.createTransaction);
-router.put('/:id', auth, transactionController.updateTransaction);
-router.delete('/:id', auth, transactionController.deleteTransaction);
+router.get('/', auth, locationController.getAllLocations);
+router.get('/:id', auth, locationController.getLocationById);
+router.post('/', auth, locationController.createLocation);
+router.put('/:id', auth, locationController.updateLocation);
+router.delete('/:id', auth, locationController.deleteLocation);
 module.exports = router;

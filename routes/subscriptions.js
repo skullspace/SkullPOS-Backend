@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const transactionController = require('../controllers/transaction');
+const subscriptionController = require('../controllers/subscriptions');
 const { auth } = require('../middleware/auth');
 
-router.get('/', auth, transactionController.getAllTransactions);
-router.get('/:id', auth, transactionController.getTransactionById);
-router.post('/', auth, transactionController.createTransaction);
-router.put('/:id', auth, transactionController.updateTransaction);
-router.delete('/:id', auth, transactionController.deleteTransaction);
+router.get('/', auth, subscriptionController.getAllSubscriptions);
+router.get('/:id', auth, subscriptionController.getSubscriptionById);
+router.post('/', auth, subscriptionController.createSubscription);
+router.put('/:id', auth, subscriptionController.updateSubscription);
+router.delete('/:id', auth, subscriptionController.deleteSubscription);
 module.exports = router;

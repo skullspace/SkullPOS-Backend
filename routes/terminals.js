@@ -1,10 +1,11 @@
 const router = require('express').Router();
-const transactionController = require('../controllers/transaction');
-const { auth } = require('../middleware/auth');
+const terminalsController = require('../controllers/terminals');
+const auth = require('../middleware/auth');
 
-router.get('/', auth, transactionController.getAllTransactions);
-router.get('/:id', auth, transactionController.getTransactionById);
-router.post('/', auth, transactionController.createTransaction);
-router.put('/:id', auth, transactionController.updateTransaction);
-router.delete('/:id', auth, transactionController.deleteTransaction);
+router.get('/', terminalsController.getAllTerminals);
+router.get('/:id', terminalsController.getTerminalById);
+router.post('/', terminalsController.addTerminal);
+router.put('/:id', terminalsController.updateTerminal);
+router.delete('/:id', terminalsController.deleteTerminal);
+
 module.exports = router;

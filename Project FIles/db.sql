@@ -41,7 +41,7 @@ CREATE TABLE "transaction_types" (
   "type_name" varchar NOT NULL
 );
 
-CREATE TABLE "transaction_statuses" (
+CREATE TABLE "transaction_status" (
   "id" integer generated always as identity PRIMARY KEY,
   "status_name" varchar NOT NULL
 );
@@ -64,7 +64,8 @@ CREATE TABLE "discounts" (
   "id" integer generated always as identity PRIMARY KEY,
   "discount_name" varchar NOT NULL,
   "role_id" integer,
-  "description" varchar
+  "description" varchar,
+  "percentage" decimal NOT NULL
 );
 
 CREATE TABLE "roles" (
@@ -86,7 +87,8 @@ CREATE TABLE "subscriptions" (
   "id" integer generated always as identity PRIMARY KEY,
   "type_id" integer NOT NULL,
   "customer_id" integer NOT NULL,
-  "cost" decimal NOT NULL
+  "cost" decimal NOT NULL,
+  'DESCRIPTION' varchar,
 );
 
 CREATE TABLE "subscription_types" (

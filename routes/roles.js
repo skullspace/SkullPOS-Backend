@@ -1,10 +1,11 @@
 const router = require('express').Router();
-const transactionController = require('../controllers/transaction');
+const rolesController = require('../controllers/roles');
 const { auth } = require('../middleware/auth');
 
-router.get('/', auth, transactionController.getAllTransactions);
-router.get('/:id', auth, transactionController.getTransactionById);
-router.post('/', auth, transactionController.createTransaction);
-router.put('/:id', auth, transactionController.updateTransaction);
-router.delete('/:id', auth, transactionController.deleteTransaction);
+router.get('/', auth, rolesController.getAllRoles);
+router.get('/:id', auth, rolesController.getRoleById);
+router.post('/', auth, rolesController.createRole);
+router.put('/:id', auth, rolesController.updateRole);
+router.delete('/:id', auth, rolesController.deleteRole);
 module.exports = router;
+

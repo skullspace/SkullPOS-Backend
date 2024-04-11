@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const transactionController = require('../controllers/staff');
+const staffController = require('../controllers/staff');
 const { auth } = require('../middleware/auth');
 
-router.get('/', auth, transactionController.getAllStaff);
-router.get('/:id', auth, transactionController.getStaffById);
-router.post('/', auth, transactionController.addStaff);
-router.put('/:id', auth, transactionController.updateStaff);
-router.delete('/:id', auth, transactionController.deleteStaff);
+router.get('/', auth, staffController.getAllStaff);
+router.get('/:id', auth, staffController.getStaffById);
+router.post('/', auth, staffController.addStaff);
+router.put('/:id', auth, staffController.updateStaff);
+router.delete('/:id', auth, staffController.deleteStaff);
 module.exports = router;
 
