@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const discountController = require('../controllers/discount');
+const discountController = require('../controllers/discounts');
 const { auth } = require('../middleware/auth');
 
 router.get('/', auth, discountController.getAllDiscounts);

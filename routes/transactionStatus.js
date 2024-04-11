@@ -4,7 +4,7 @@ const { auth } = require('../middleware/auth');
 
 router.get('/', auth, transactionStatusController.getAllTransactionStatuss);
 router.get('/:id', auth, transactionStatusController.getTransactionStatusById);
-router.post('/', auth, transactionStatusController.createTransactionStatus);
+router.post('/', auth, transactionStatusController.addTransactionStatus);
 router.put('/:id', auth, transactionStatusController.updateTransactionStatus);
 router.delete('/:id', auth, transactionStatusController.deleteTransactionStatus);
 
