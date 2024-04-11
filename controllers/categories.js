@@ -27,8 +27,9 @@ module.exports = {
     createCategory: (req, res) => {
         (async () => {
             try {
-                const { name, description } = req.body;
-                const category = await db.query('INSERT INTO categories (name, description) VALUES ($1, $2) RETURNING *', [name, description]);
+                console.log(req.body)
+                const { category_name,description } = req.body;
+                const category = await db.query('INSERT INTO categories (category_name,description) VALUES ($1, $2) RETURNING *', [category_name,description]);
                 res.json(category.rows[0]);
             } catch (error) {
                 res.status(500).json({ error: error.message });
@@ -39,8 +40,8 @@ module.exports = {
     updateCategory: (req, res) => {
         (async () => {
             try {
-                const { name, description } = req.body;
-                const category = await db.query('UPDATE categories SET name = $1, description = $2 WHERE id = $3 RETURNING *', [name, description, req.params.id]);
+                const { category_name, description } = req.body;
+                const category = await db.query('UPDATE categories SET category_name = $1, description = $2 WHERE id = $3 RETURNING *', [name, description, req.params.id]);
                 res.json(category.rows[0]);
             } catch (error) {
                 res.status(500).json({ error: error.message });

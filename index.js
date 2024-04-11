@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
+const config = require('./config/config.js');
 
 app.use(bodyParser.json());
 app.use(cors({ origin: 'https://skullpos.shotty.tech' }));
@@ -49,4 +50,4 @@ const cookieParser = require('cookie-parser');
 const passport = require('passport');
 
 app.use(cookieParser());
-app.use(session ({secret: process.env.SESSION_SECRET}));
+app.use(session ({secret: config.setup.secret}));

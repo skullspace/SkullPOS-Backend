@@ -10,14 +10,8 @@ const pool = new Pool({
     ssl: true
 });
 
-// test
-pool.query('SELECT NOW()', (err, res) => {
-    console.log(err, res);
-    pool.end();
-});
 
 
 module.exports = {
     query: (text, params) => pool.query(text, params),
-
 };
