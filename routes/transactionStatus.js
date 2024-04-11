@@ -2,7 +2,7 @@ const router = require('express').Router();
 const transactionStatusController = require('../controllers/transactionStatus');
 const { auth } = require('../middleware/auth');
 
-router.get('/', auth, transactionStatusController.getAllTransactionStatuss);
+router.get('/', auth, transactionStatusController.getAllTransactionStatus);
 router.get('/:id', auth, transactionStatusController.getTransactionStatusById);
 router.post('/', auth, transactionStatusController.addTransactionStatus);
 router.put('/:id', auth, transactionStatusController.updateTransactionStatus);
