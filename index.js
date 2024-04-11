@@ -13,6 +13,28 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
+/* models
+"staff";
+"terminals";
+"locations";
+"transactions";
+"transaction_types";
+"transaction_status";
+"products";
+"categories";
+"discounts";
+"roles";
+"customers";
+"subscriptions";
+"subscription_types";
+"events";
+"transfers";
+"transfer_types";
+"transfer_items";
+"stock";
+"event_counts";
+*/
+
 const staff = require('./routes/staff');
 const customers = require('./routes/customers.js');
 const products = require('./routes/products.js');
@@ -26,6 +48,15 @@ const subscriptionTypes = require('./routes/subscriptionTypes.js');
 const terminals = require('./routes/terminals.js');
 const transactionStatus = require('./routes/transactionStatus.js');
 const transactionTypes = require('./routes/transactionTypes.js');
+//const events = require('./routes/events.js');
+//const transfers = require('./routes/transfers.js');
+//const transferTypes = require('./routes/transferTypes.js');
+//const transferItems = require('./routes/transferItems.js');
+//const stock = require('./routes/stock.js');
+//const eventCounts = require('./routes/eventCounts.js');
+
+const auth = require('./routes/auth.js');
+
 
 
 
@@ -42,6 +73,13 @@ app.use('/api/subscriptionTypes', subscriptionTypes);
 app.use('/api/terminals', terminals);
 app.use('/api/transactionStatus', transactionStatus);
 app.use('/api/transactionTypes', transactionTypes);
+//app.use('/api/events', events);
+//app.use('/api/transfers', transfers);
+//app.use('/api/transferTypes', transferTypes);
+//app.use('/api/transferItems', transferItems);
+//app.use('/api/stock', stock);
+//app.use('/api/eventCounts', eventCounts);
+
 
 
 
