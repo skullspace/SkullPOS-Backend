@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const transactionTypesController = require('../controllers/transactionTypes');
-const { auth } = require('../middleware/auth');
+const { auth } = require('../utils/auth');
 
 router.get('/', auth, transactionTypesController.getAllTransactionTypes);
 router.get('/:id', auth, transactionTypesController.getTransactionTypeById);

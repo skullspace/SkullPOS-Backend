@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const terminalsController = require('../controllers/terminals');
-const auth = require('../middleware/auth');
+const auth = require('../utils/auth');
 
 router.get('/', terminalsController.getAllTerminals);
 router.get('/:id', terminalsController.getTerminalById);

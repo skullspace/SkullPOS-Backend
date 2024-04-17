@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const discountController = require('../controllers/discounts');
-const { auth } = require('../middleware/auth');
+const { auth } = require('../utils/auth');
 
 router.get('/', auth, discountController.getAllDiscounts);
 router.get('/:id', auth, discountController.getDiscountById);

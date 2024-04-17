@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const transactionStatusController = require('../controllers/transactionStatus');
-const { auth } = require('../middleware/auth');
+const { auth } = require('../utils/auth');
 
 router.get('/', auth, transactionStatusController.getAllTransactionStatus);
 router.get('/:id', auth, transactionStatusController.getTransactionStatusById);

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const subscriptionTypesController = require('../controllers/subscriptionTypes');
-const { auth } = require('../middleware/auth');
+const { auth } = require('../utils/auth');
 
 router.get('/', auth, subscriptionTypesController.getAllSubscriptionTypes);
 router.get('/:id', auth, subscriptionTypesController.getSubscriptionTypeById);

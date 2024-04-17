@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const customerController = require('../controllers/customers');
-const { auth } = require('../middleware/auth');
+const { auth } = require('../utils/auth');
 
 router.get('/', auth, customerController.getAllCustomers);
 router.get('/:id', auth, customerController.getCustomerById);

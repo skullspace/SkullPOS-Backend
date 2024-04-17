@@ -55,7 +55,9 @@ const transactionTypes = require('./routes/transactionTypes.js');
 //const stock = require('./routes/stock.js');
 //const eventCounts = require('./routes/eventCounts.js');
 
-const auth = require('./routes/auth.js');
+//const auth = require('./routes/auth.js');
+
+const functions = require('./routes/functions.js');
 
 
 
@@ -79,6 +81,8 @@ app.use('/api/transactionTypes', transactionTypes);
 //app.use('/api/transferItems', transferItems);
 //app.use('/api/stock', stock);
 //app.use('/api/eventCounts', eventCounts);
+
+app.use('/functions', functions);
 
 
 

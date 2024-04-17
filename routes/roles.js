@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const rolesController = require('../controllers/roles');
-const { auth } = require('../middleware/auth');
+const { auth } = require('../utils/auth');
 
 router.get('/', auth, rolesController.getAllRoles);
 router.get('/:id', auth, rolesController.getRoleById);

@@ -41,7 +41,7 @@ module.exports = {
         (async () => {
             try {
                 const { category_name, description } = req.body;
-                const category = await db.query('UPDATE categories SET category_name = $1, description = $2 WHERE id = $3 RETURNING *', [name, description, req.params.id]);
+                const category = await db.query('UPDATE categories SET category_name = $1, description = $2 WHERE id = $3 RETURNING *', [category_name, description, req.params.id]);
                 res.json(category.rows[0]);
             } catch (error) {
                 res.status(500).json({ error: error.message });

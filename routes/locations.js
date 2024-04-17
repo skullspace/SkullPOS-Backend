@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const locationController = require('../controllers/locations');
-const { auth } = require('../middleware/auth');
+const { auth } = require('../utils/auth');
 
 router.get('/', auth, locationController.getAllLocations);
 router.get('/:id', auth, locationController.getLocationById);
