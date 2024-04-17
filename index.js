@@ -82,7 +82,7 @@ app.use('/api/transactionTypes', transactionTypes);
 //app.use('/api/stock', stock);
 //app.use('/api/eventCounts', eventCounts);
 
-app.use('/functions', functions);
+app.use('/api/functions', functions);
 
 
 

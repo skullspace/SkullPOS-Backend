@@ -11,7 +11,40 @@ const client = Client.initWithMiddleware({
     authProvider,
 });
 
+const staffController = require('../controllers/staff');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+
+
 module.exports = {
+    login: async (username, password) => {
+        try {
+            const getUser = await fetch(`http://localhost:5000/api/staff/username/${username}`,
+                {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'login': 'loginXASFWE',
+                    }
+
+                });
+            var user = await getUser.json();
+            console.log(user)
+            const match = await bcrypt.compare(password, user.password);
+
+            if (!match) {
+                throw new Error('Invalid password');
+            }
+            const token = jwt.sign({ username: user.username, role: user.role }, config.setup.secret);
+            console.log('User logged in:', user.username);
+            return token;
+
+        } catch (error) {
+            console.error('Error logging in:', error);
+            throw new Error('Invalid username or password');
+        }
+    },
+
     sendEmail: async (subject, body, recipients) => {
         try {
             const sendMail = {

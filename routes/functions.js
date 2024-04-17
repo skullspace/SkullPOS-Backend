@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { auth } = require('../utils/auth');
-const { sendEmail } = require('../utils/functions');
+const { sendEmail, login } = require('../utils/functions');
 
-router.get('/test/email',auth, async (req, res) => {
+router.get('/test/email', auth, async (req, res) => {
     const subject = 'Test email';
     const body = 'This is a test email sent from the API';
     const recipients = ['everett.bazzocchi@skullspace.ca'];
@@ -15,5 +15,16 @@ router.get('/test/email',auth, async (req, res) => {
 
 }
 );
+
+router.get('/login', (req, res) => {
+    console.log(req.body);
+    login(req.body.username, req.body.password).then((token) => {
+        res.json({ token: token });
+    }).catch((error) => {
+        res.status(403).json({ error: error.message });
+    }
+    );
+
+});
 
 module.exports = router;
