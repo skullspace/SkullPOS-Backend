@@ -22,7 +22,7 @@ CREATE TABLE "staff" (
 "id" integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   "first_name" varchar NOT NULL,
   "last_name" varchar NOT NULL,
-  "username" integer,
+  "username" varchar(4),
   "pin" varchar,
   "password" varchar,
   "role_id" integer NOT NULL,
