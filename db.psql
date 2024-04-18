@@ -195,3 +195,4 @@ ALTER TABLE "stock" ADD FOREIGN KEY ("location_id") REFERENCES "locations" ("id"
 
 ALTER TABLE "event_counts" ADD FOREIGN KEY ("event_id") REFERENCES "events" ("id");
 ALTER TABLE "event_counts" ADD FOREIGN KEY ("product_id") REFERENCES "products" ("id");
+
