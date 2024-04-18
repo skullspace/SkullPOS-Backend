@@ -48,14 +48,13 @@ const subscriptionTypes = require('./routes/subscriptionTypes.js');
 const terminals = require('./routes/terminals.js');
 const transactionStatus = require('./routes/transactionStatus.js');
 const transactionTypes = require('./routes/transactionTypes.js');
-//const events = require('./routes/events.js');
-//const transfers = require('./routes/transfers.js');
-//const transferTypes = require('./routes/transferTypes.js');
-//const transferItems = require('./routes/transferItems.js');
-//const stock = require('./routes/stock.js');
-//const eventCounts = require('./routes/eventCounts.js');
+const events = require('./routes/events.js');
+const transfers = require('./routes/transfers.js');
+const transferTypes = require('./routes/transferTypes.js');
+const transferItems = require('./routes/transferItems.js');
+const stock = require('./routes/stock.js');
+const eventCounts = require('./routes/eventCounts.js');
 
-//const auth = require('./routes/auth.js');
 
 const functions = require('./routes/functions.js');
 
