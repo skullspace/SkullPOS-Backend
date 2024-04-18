@@ -1,4 +1,4 @@
-const router = express.Router();
+const router = require('express').Router();
 const transferItemsController = require('../controllers/transferItems');
 const { auth } = require('../utils/auth');
 

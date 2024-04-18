@@ -1,4 +1,4 @@
-const router = express.Router();
+const router = require('express').Router();
 const eventController = require('../controllers/events');
 const { auth } = require('../utils/auth');
 

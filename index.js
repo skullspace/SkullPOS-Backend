@@ -74,12 +74,12 @@ app.use('/api/subscriptionTypes', subscriptionTypes);
 app.use('/api/terminals', terminals);
 app.use('/api/transactionStatus', transactionStatus);
 app.use('/api/transactionTypes', transactionTypes);
-//app.use('/api/events', events);
-//app.use('/api/transfers', transfers);
-//app.use('/api/transferTypes', transferTypes);
-//app.use('/api/transferItems', transferItems);
-//app.use('/api/stock', stock);
-//app.use('/api/eventCounts', eventCounts);
+app.use('/api/events', events);
+app.use('/api/transfers', transfers);
+app.use('/api/transferTypes', transferTypes);
+app.use('/api/transferItems', transferItems);
+app.use('/api/stock', stock);
+app.use('/api/eventCounts', eventCounts);
 
 app.use('/api/functions', functions);
 

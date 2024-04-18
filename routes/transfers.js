@@ -1,4 +1,4 @@
-const router = express.router();
+const router = require('express').Router();
 const transferController = require('../controllers/transfers');
 const { auth } = require('../utils/auth');
 

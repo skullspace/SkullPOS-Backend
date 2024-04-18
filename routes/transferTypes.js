@@ -1,4 +1,4 @@
-const router = exmiddlewarepress.Router();
+const router = require('express').Router();
 const transferTypesController = require('../controllers/transferTypes');
 const { auth} = require('../utils/auth');
 
