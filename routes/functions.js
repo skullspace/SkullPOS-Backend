@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { auth } = require('../utils/auth');
-const { sendEmail, login } = require('../utils/functions');
+const { sendEmail, login } = require('../functions');
 
 router.get('/test/email', auth, async (req, res) => {
     const subject = 'Test email';
@@ -16,11 +16,12 @@ router.get('/test/email', auth, async (req, res) => {
 }
 );
 
-router.get('/login', (req, res) => {
+router.post('/login', (req, res) => {
     console.log(req.body);
-    login(req.body.username, req.body.password).then((token) => {
-        res.json({ token: token });
+    login(req.body.username, req.body.password).then((result) => {
+        res.json(result);
     }).catch((error) => {
+        console.log(error);
         res.status(403).json({ error: error.message });
     }
     );

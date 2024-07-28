@@ -5,35 +5,17 @@ const app = express();
 const config = require('./config/config.js');
 
 app.use(bodyParser.json());
-app.use(cors({ origin: 'https://skullpos.shotty.tech' }));
+// also allow localhost for testing
+// allow multiple origins
+// app.use(cors({ origin: 'http://localhost:3000' }));
+
+app.use(cors({ origin: 'http://localhost:3000' }));
 
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-
-/* models
-"staff";
-"terminals";
-"locations";
-"transactions";
-"transaction_types";
-"transaction_status";
-"products";
-"categories";
-"discounts";
-"roles";
-"customers";
-"subscriptions";
-"subscription_types";
-"events";
-"transfers";
-"transfer_types";
-"transfer_items";
-"stock";
-"event_counts";
-*/
 
 const staff = require('./routes/staff');
 const customers = require('./routes/customers.js');
@@ -55,11 +37,7 @@ const transferItems = require('./routes/transferItems.js');
 const stock = require('./routes/stock.js');
 const eventCounts = require('./routes/eventCounts.js');
 
-
 const functions = require('./routes/functions.js');
-
-
-
 
 app.use('/api/staff', staff);
 app.use('/api/customers', customers);
@@ -83,12 +61,3 @@ app.use('/api/eventCounts', eventCounts);
 
 app.use('/api/functions', functions);
 
-
-
-
-const session = require('express-session');
-const cookieParser = require('cookie-parser');
-const passport = require('passport');
-
-app.use(cookieParser());
-app.use(session ({secret: config.setup.secret}));
